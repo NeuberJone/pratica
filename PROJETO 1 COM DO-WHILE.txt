@@ -1,0 +1,171 @@
+using namespace std;
+#include <iostream>
+
+int main()
+{
+	int i, contador3, p1, p2, contador5, contador22;
+	char op;
+	contador3 = 0, p1 = 0, contador5 = 0, contador22=0;
+	//declarar array de strings para armazenar 20 nomes
+	string listaDeNomes[21] = { " ","Ana","Rui","Pedro","Abel","Rita","Seara","Isabel","Paulo","Daniel","Teresa","Joaquim","Tone","Maria","Manuel",
+		"Beatriz","Carol","Alex","Tiago","Anabela","Sandra" };
+	string nome2, nome3, nome5, nome22;
+	
+	do
+	//Menu que aparecerá para o usuário
+	{
+		cout << "\n\MINI PROJETO 1\n\n";
+		cout << "Escolha uma das opcoes abaixo: \n";
+		cout << "L - listar o array\n";
+		cout << "T - trocar o nome de uma certa posição escolhida pelo utilizador (ler posição, ler nome)\n";
+		cout << "P - procurar nome: pedir nome ao utilizador; verificar se esse nome existe (sim/não)\n";
+		cout << "R - fazer o 'reset' à lista de nomes (inicializar o array com os nomes originais)\n";
+		cout << "Q - ler nome; quantas vezes esse nome aparece no array?\n";
+		cout << "1 - listar número (posição no array), nome, comprimento em letras (ex.: 1, Ana, 3 letras)\n";
+		cout << "2 - qual o nome maior? (ex.: Zacarias, 8 letras)\n";
+		cout << "3 - Sair\n";
+		cout << "Escolha uma das opcoes e aperte ENTER: ";
+		cin >> op;
+
+		switch (op)
+		{
+		//listar array
+		case 'L':
+		case 'l':
+
+			for (i = 0; i < 21; i++)
+			{
+				cout << listaDeNomes[i] << "\n";
+			}
+			break;
+
+		case 'T':
+		case 't':
+		//trocar o nome de uma certa posição escolhida pelo utilizador (ler posição, ler nome)
+			for ( i = 0; i < 21; i++)
+			{
+				cout << "\n\Insira posicao\n";
+				cin >> p2;
+				cout << "nesta posicao, esta o nome " << listaDeNomes[p2] << "\n";
+
+				cout << "\n\insira novo nome\n";
+				cin >> nome2; "\n";
+				listaDeNomes[p2] = nome2;
+				cout << "\n";
+				cout << "nome na posicao " << p2 << " alterado para " << nome2 << "\n";
+				break; "\n";
+			}
+			for ( i = 0; i < 21; i++)
+			{
+				cout << listaDeNomes[i] << "\n";
+			}
+			break;
+
+		case 'P':
+		case 'p':
+		//procurar nome: pedir nome ao utilizador; verificar se esse nome existe (sim/não)
+		cout << "\n\insira nome a verificar\n";
+		cin >> nome3; "\n";
+			for ( i = 0; i < 21; i++)
+			{
+				if (nome3==listaDeNomes[i])
+				{
+					contador3++;
+				}
+			}
+			if (contador3>0)
+			{
+				cout<< "o nome " << nome3 << " consta na relacao";
+			}
+			else
+			{
+				cout << "o nome " << nome3 << " nao consta na relacao";
+			}
+			break;
+
+		case 'R':
+		case 'r':
+		//reset à lista de nomes
+			cout << "A opcao escolhida foi resetar a lista de nomes\n\n";
+			listaDeNomes[1] = "Ana";
+			listaDeNomes[2] = "Rui";
+			listaDeNomes[3] = "Pedro";
+			listaDeNomes[4] = "Abel";
+			listaDeNomes[5] = "Rita";
+			listaDeNomes[6] = "Seara";
+			listaDeNomes[7] = "Isabel";
+			listaDeNomes[8] = "Paulo";
+			listaDeNomes[9] = "Daniel";
+			listaDeNomes[10] = "Teresa";
+			listaDeNomes[11] = "Joaquim";
+			listaDeNomes[12] = "Tone";
+			listaDeNomes[13] = "Maria";
+			listaDeNomes[14] = "Manuel";
+			listaDeNomes[15] = "Beatriz";
+			listaDeNomes[16] = "Carol";
+			listaDeNomes[17] = "Alex";
+			listaDeNomes[18] = "Tiago";
+			listaDeNomes[19] = "Anabela";
+			listaDeNomes[20] = "Sandra";
+
+			for (i = 0; i < 21; i++)
+			{
+				cout << listaDeNomes[i] << "\n";
+			}
+
+		case 'Q':
+		case 'q':
+		//ler nome; quantas vezes esse nome aparece no array <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< tem algo de errado aqui
+		cout << "\n\Insira nome a verificar\n";
+		cin >> nome5; "\n";
+
+		for (i = 0; i < 21; i++)
+		{
+			if (listaDeNomes[i]== nome5)
+			{
+				contador5++;
+			}
+		}
+		cout << "o nome " << nome5 << " aparece " << contador5 << " veze(s) na lista.";
+
+		case '1':
+		//listar posicao, nome, comprimento em letras
+			for ( i = 0; i < 21; i++)
+			{
+				cout << "posicao: " << i + 1 << "\t" << "nome "<<listaDeNomes[i] << "\t" << listaDeNomes[i].length() << " letras\n";
+			}
+
+		case '2':
+		//qual o nome maior? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<PRECISO CONSERTAR ISSO - NÃO LEMBRO O QUE É AUX
+			for ( i = 0; i < 21; i++)
+			{
+			cout << "A opção escolhida foi verificar o maior nome\n\n";
+			nome22 = listaDeNomes[0];
+				for (i = 0; i < 21; i++)
+				{
+					if (nome22.length() > listaDeNomes[i + 1].length()) 
+					{
+						contador22++;
+					}
+					else 
+					{
+						nome22 = listaDeNomes[i + 1];
+						aux = listaDeNomes[i + 1].length();
+					}
+				}
+				cout << "O maior nome na lista é: " << nome22 << " com " << aux << " letras \n\n";
+			}
+
+		case 0:
+			cout << "Até logo!";
+			break;
+
+		defalt:
+			cout << "número inválido\n";
+			break;
+
+		}
+		
+	} while (op!=0);
+
+}

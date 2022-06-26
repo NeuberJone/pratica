@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string>
+#include <iostream>
+ 
+using namespace std;
+
+void cls()
+{
+
+system("cls");
+
+}
+
+void color()
+{
+
+system("color a");
+
+}
+
+ 
+//Função principal do programa
+int main()
+{
+    //Permite usar acentos
+    setlocale(LC_ALL,""); color();
+
+	
+	cout << "Olá mundo!";
+	
+    
+    return 0;
+}
