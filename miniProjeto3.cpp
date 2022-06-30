@@ -64,7 +64,7 @@ void menuPrincipal()
 }
 
 // inicializa com 20 nomes e 20 freguesias
-void inicializa_matriz(string *mat) // 
+void inicializaMatriz(string **fichas)
 {
 	fichas[0][0] = "Ana";
 	fichas[1][0] = "Bela";
@@ -108,33 +108,77 @@ void inicializa_matriz(string *mat) //
 	fichas[18][1] = "Gualtar";
 	fichas[19][1] = "Lindoso";
 
-	fichas[0][2] = "F"; fichas[0][3] = "1980";
-	fichas[1][2] = "F"; fichas[1][3] = "1982";
-	fichas[2][2] = "M"; fichas[2][3] = "1981";
-	fichas[3][2] = "M"; fichas[3][3] = "1980";
-	fichas[4][2] = "M"; fichas[4][3] = "1980";
-	fichas[5][2] = "M"; fichas[5][3] = "1980";
-	fichas[6][2] = "F"; fichas[6][3] = "1977";
-	fichas[7][2] = "F"; fichas[7][3] = "1977";
-	fichas[8][2] = "M"; fichas[8][3] = "1983";
-	fichas[9][2] = "M"; fichas[9][3] = "1989";
-	fichas[10][2] = "F"; fichas[10][3] = "1980";
-	fichas[11][2] = "M"; fichas[11][3] = "1981";
-	fichas[12][2] = "M"; fichas[12][3] = "1982";
-	fichas[13][2] = "F"; fichas[13][3] = "1975";
-	fichas[14][2] = "F"; fichas[14][3] = "1980";
-	fichas[15][2] = "M"; fichas[15][3] = "1988";
-	fichas[16][2] = "M"; fichas[16][3] = "1987";
-	fichas[17][2] = "M"; fichas[17][3] = "1980";
-	fichas[18][2] = "M"; fichas[18][3] = "1985";
-	fichas[19][2] = "M"; fichas[19][3] = "1986";
+	fichas[0][2] = "F";
+	fichas[1][2] = "F";
+	fichas[2][2] = "M";
+	fichas[3][2] = "M";
+	fichas[4][2] = "M";
+	fichas[5][2] = "M";
+	fichas[6][2] = "F";
+	fichas[7][2] = "F";
+	fichas[8][2] = "M";
+	fichas[9][2] = "M";
+	fichas[10][2] = "F";
+	fichas[11][2] = "M";
+	fichas[12][2] = "M";
+	fichas[13][2] = "F";
+	fichas[14][2] = "F";
+	fichas[15][2] = "M";
+	fichas[16][2] = "M";
+	fichas[17][2] = "M";
+	fichas[18][2] = "M";
+	fichas[19][2] = "M";
+
+    fichas[0][3] = "1980";
+	fichas[1][3] = "1982";
+	fichas[2][3] = "1981";
+	fichas[3][3] = "1980";
+	fichas[4][3] = "1980";
+	fichas[5][3] = "1980";
+	fichas[6][3] = "1977";
+	fichas[7][3] = "1977";
+	fichas[8][3] = "1983";
+	fichas[9][3] = "1989";
+	fichas[10][3] = "1980";
+	fichas[11][3] = "1981";
+	fichas[12][3] = "1982";
+	fichas[13][3] = "1975";
+	fichas[14][3] = "1980";
+	fichas[15][3] = "1988";
+	fichas[16][3] = "1987";
+	fichas[17][3] = "1980";
+	fichas[18][3] = "1985";
+	fichas[19][3] = "1986";
 }
 
 //Função principal do programa
 int main()
 {
-    string mat[20][4];
-    int i, j;
+    string cad[20][4];
+    int i, j, opcao;
+
+    //laço para segurar o usuário no menu
+	while (opcao == 1)
+	{
+        inicializaMatriz(&cad);
+        cls();
+		desenhaborda();
+		cout << "        Miniprojeto 3 \n";
+		desenhaborda();
+		menuPrincipal();
+
+        for (i = 0; i < 20; i++)
+        {
+            for (j = 0; j < 4; j++)
+            {
+                cout << cad[i][j];
+            }
+            
+        }
+
+
+
+    }
 
         
 
