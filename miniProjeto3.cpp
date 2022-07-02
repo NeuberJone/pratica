@@ -213,6 +213,7 @@ int main()
 
 			case 3:
 				cls();
+				//Altera uma ficha na posição escolhida
 				cout << "A opção escolhida foi Inserir nova ficha, para aposição escolhida\n\n";
 				
 				for ( i = 0; i <20; i++)
