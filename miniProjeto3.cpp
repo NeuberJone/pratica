@@ -21,7 +21,7 @@ void desenhaborda ()
 
 int invalida (int op)
 {
-    cout << "Opção inválida, por favor escolha uma das opções abaixo:\n";
+    cout << "Opção inválida, por favor escolha uma das opções abaixo:\n\n";
     cout << "1 - Voltar ao menu anterior\n";
     cout << "2 - Sair\n\n";
     cout << "Escolha uma das opções e aperte ENTER: ";
@@ -199,7 +199,7 @@ int main()
 				{
 					for ( j = 0; j < 4; j++)
 					{
-						cout << cad[i][j] << " ";
+						cout << cad[i][j] << "  ";
 					}
 					cout << "\n";
 				}
@@ -250,7 +250,7 @@ int main()
 						}
 					}
 				}
-				cout << "Existem " << cont << " raparigas na lista.\n\n";
+				cout << "Existem " << cont / 4 << " raparigas na lista.\n\n";
 
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
@@ -319,7 +319,7 @@ int main()
 					{
 						if (cad [i][2] == "F")
 						{
-							cout << cad[i][j] << " ";
+							cout << cad[i][j] << "  ";
 						}
 					}
 					if (cad [i][2] == "F")
@@ -345,7 +345,7 @@ int main()
 					{
 						if (cad [i][2] == "M")
 						{
-							cout << cad[i][j] << " ";
+							cout << cad[i][j] << "  ";
 						}
 					}
 					if (cad [i][2] == "M")
