@@ -49,6 +49,7 @@ int voltaMenu (int op)
 
 void menuPrincipal()
 {
+
     cout << "Escolha uma das opções abaixo: \n";
     cout << "1 - Inicializar a matriz com 80 items (ou seja, 20x4)\n";
     cout << "2 - Listar a matriz\n";
@@ -157,14 +158,13 @@ int main()
 {
 	SetConsoleCP(1252);
 	SetConsoleOutputCP(1252);
-
     string cad[20][4];
-    int i, j, opcao = 1;
+    int i, j, opcao = 1, cont;
 	
     //laço para segurar o usuário no menu
 	while (opcao == 1)
 	{
-        inicializaMatriz(cad);
+        //inicializaMatriz(cad);
         cls();
 		desenhaborda();
 		cout << "        Miniprojeto 3 \n";
@@ -179,6 +179,8 @@ int main()
 			case 1:
 				cls();
 				cout << "A opção escolhida foi Inicializar a Matriz\n\n";
+
+				cout << "A matriz foi iniciada";
 				//Inicializa a matriz
 				inicializaMatriz(cad);
 				opcao = voltaMenu (opcao);
@@ -236,6 +238,19 @@ int main()
 			case 5:
 				cls();
 				cout << "A opção escolhida foi verificar quantas raparigas há na lista\n\n";
+				//Verifica quantas raparigas há na lista
+				cont = 0;
+				for ( i = 0; i <20; i++)
+				{
+					for ( j = 0; j < 4; j++)
+					{
+						if (cad [i][2] == "F")
+						{
+							cont++;
+						}
+					}
+				}
+				cout << "Existem " << cont << " raparigas na lista.\n\n";
 
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
@@ -248,6 +263,19 @@ int main()
 			case 6:
 				cls();
 				cout << "A opção escolhida foi verificar quantos rapazes há em Maximinos\n\n";
+				//Verifica quantos rapazes há em Maximinos
+				cont = 0;
+				for ( i = 0; i <20; i++)
+				{
+					for ( j = 0; j < 4; j++)
+					{
+						if (cad [i][1] == "Maximinos" && cad [i][2] == "M")
+						{
+							cont++;
+						}
+					}
+				}
+				cout << "Existem " << cont / 4 << " rapazes em Maximinos\n\n";
 
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
@@ -284,7 +312,7 @@ int main()
 			case 9:
 				cls();
 				cout << "A opção escolhida foi listar apenas as raparigas\n\n";
-
+				//Lista apenas as raparigas
 				for ( i = 0; i <20; i++)
 				{
 					for ( j = 0; j < 4; j++)
@@ -294,7 +322,10 @@ int main()
 							cout << cad[i][j] << " ";
 						}
 					}
-					cout << "\n";
+					if (cad [i][2] == "F")
+						{
+							cout << "\n";
+						}
 				}
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
@@ -307,7 +338,7 @@ int main()
 			case 10:
 				cls();
 				cout << "A opção escolhida foi listar apenas os rapazes\n\n";
-
+				//Lista apenas os rapazes
 				for ( i = 0; i <20; i++)
 				{
 					for ( j = 0; j < 4; j++)
@@ -317,7 +348,10 @@ int main()
 							cout << cad[i][j] << " ";
 						}
 					}
-					cout << "\n";
+					if (cad [i][2] == "M")
+						{
+							cout << "\n";
+						}
 				}
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
