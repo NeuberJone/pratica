@@ -158,8 +158,8 @@ int main()
 {
 	SetConsoleCP(1252);
 	SetConsoleOutputCP(1252);
-    string cad[20][4];
-    int i, j, opcao = 1, cont;
+    string cad[20][4], info;
+    int i, j, opcao = 1, cont, n;
 	
     //laço para segurar o usuário no menu
 	while (opcao == 1)
@@ -215,6 +215,35 @@ int main()
 				cls();
 				cout << "A opção escolhida foi Inserir nova ficha, para aposição escolhida\n\n";
 				
+				for ( i = 0; i <20; i++)
+				{
+					for ( j = 0; j < 3; j++)
+					{
+						cout << i + 1 << " - " << cad[i][j] << " - "; 
+					}
+					cout << cad[i][3];
+					cout << "\n";
+				}
+				cout << "\n\nDigite a posição que deseja alterar: ";
+				cin >> n;
+				cout << "\nDigite o nome: ";
+				cin >> info;
+				cad[n-1][0] = info;
+				cout << "\nDigite o local: ";
+				cin >> info;
+				cad[n-1][1] = info;
+				cout << "\nDigite o gênero: ";
+				cin >> info;
+				cad[n-1][2] = info;
+				cout << "\nDigite o ano de nascimento: ";
+				cin >> info;
+				cad[n-1][3] = info;
+				cout << "\n\n A entrada " << n << " foi alterada para: ";
+				for ( j = 0; j < 3; j++)
+				{
+					cout << n << " - " << cad[n-1][j] << " - "; 
+				}
+				cout << cad[n-1][3];
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
 				{
@@ -242,15 +271,12 @@ int main()
 				cont = 0;
 				for ( i = 0; i <20; i++)
 				{
-					for ( j = 0; j < 4; j++)
+					if (cad [i][2] == "F")
 					{
-						if (cad [i][2] == "F")
-						{
-							cont++;
-						}
+						cont++;
 					}
 				}
-				cout << "Existem " << cont / 4 << " raparigas na lista.\n\n";
+				cout << "Existem " << cont << " raparigas na lista.\n\n";
 
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
