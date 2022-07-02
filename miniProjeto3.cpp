@@ -85,7 +85,7 @@ void inicializaMatriz(string fichas[20][4])
 	fichas[14][0] = "Anabela";
 	fichas[15][0] = "Otaviano";
 	fichas[16][0] = "Rui";
-	fichas[17][0] = "SilvÃ©rio";
+	fichas[17][0] = "Silvário";
 	fichas[18][0] = "Teodoro";
 	fichas[19][0] = "Zacarias";
 
@@ -216,33 +216,38 @@ int main()
 				//Altera uma ficha na posição escolhida
 				cout << "A opção escolhida foi Inserir nova ficha, para aposição escolhida\n\n";
 				
-				for ( i = 0; i <20; i++)
+				for ( i = 0; i < 20; i++)
 				{
-					for ( j = 0; j < 3; j++)
+					cout << i + 1;
+					for ( j = 0; j < 4; j++)
 					{
-						cout << i + 1 << " - " << cad[i][j] << " - "; 
+						cout << " - " << cad[i][j]; 
 					}
-					cout << cad[i][3];
 					cout << "\n";
 				}
 				cout << "\n\nDigite a posição que deseja alterar: ";
 				cin >> n;
+				cout << "Na posição " << n << " está a ficha: " << n;
+				for ( j = 0; j < 4; j++)
+				{
+					cout << " - " << cad[n-1][j]; 
+				}
 				cout << "\nDigite o nome: ";
 				cin >> info;
 				cad[n-1][0] = info;
-				cout << "\nDigite o local: ";
+				cout << "Digite o local: ";
 				cin >> info;
 				cad[n-1][1] = info;
-				cout << "\nDigite o gênero: ";
+				cout << "Digite o gênero: ";
 				cin >> info;
 				cad[n-1][2] = info;
-				cout << "\nDigite o ano de nascimento: ";
+				cout << "Digite o ano de nascimento: ";
 				cin >> info;
 				cad[n-1][3] = info;
-				cout << "\n\n A entrada " << n << " foi alterada para: ";
+				cout << "\n\n A entrada " << n << " foi alterada para: " << n;
 				for ( j = 0; j < 3; j++)
 				{
-					cout << n << " - " << cad[n-1][j] << " - "; 
+					cout << " - " << cad[n-1][j]; 
 				}
 				cout << cad[n-1][3];
 				opcao = voltaMenu (opcao);
