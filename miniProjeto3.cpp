@@ -261,8 +261,17 @@ int main()
 
 			case 4:
 				cls();
+				cont = 0;
+				//Verifica quem é o mais velho da lista.
 				cout << "A opção escolhida foi verificar quem é o mais velho da lista\n\n";
-				
+				for ( i = 1; i < 20; i++)
+				{
+					if (cad [i][3] < cad[i-1][3])
+					{
+						cont = i;
+					}
+				}
+				cout << "A pessoa mais velha da lista é: " << cad[cont][0];
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
 				{
