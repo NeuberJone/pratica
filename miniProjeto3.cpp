@@ -195,11 +195,12 @@ int main()
 				cls();
 				cout << "A opção escolhida foi Listar a matriz\n\n";
 				//listar a matriz
-				for ( i = 0; i <20; i++)
+				for ( i = 0; i < 20; i++)
 				{
+					cout << i + 1;
 					for ( j = 0; j < 4; j++)
 					{
-						cout << cad[i][j] << "  ";
+						cout << " - " << cad[i][j]; 
 					}
 					cout << "\n";
 				}
@@ -319,8 +320,33 @@ int main()
 
 			case 7:
 				cls();
+				//Lê um ano digitado pelo usuário e verifica quantas vezes aparece na lista
+				cont = 0;
 				cout << "A opção escolhida foi ler ano e verificar se aparece repetido\n\n";
-
+				cout << "Digite o ano a ser verificado: ";
+				cin >> info;
+				for ( i = 0; i <20; i++)
+				{
+					for ( j = 0; j < 4; j++)
+					{
+						if (cad [i][3] == info)
+						{
+							cont++;
+						}
+					}
+				}
+				if (cont > 1)
+				{
+					cout << "O ano de " << info << " aparece " << cont << " na lista.";
+				}
+				else if (cont = 1)
+				{
+					cout << "O ano de " << info << " aparece apenas uma vez na lista.";
+				}
+				else
+				{
+					cout << "O ano de " << info	<< " não aparece nenhuma vez na lista.";
+				}
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
 				{
