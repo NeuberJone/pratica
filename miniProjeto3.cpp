@@ -357,8 +357,27 @@ int main()
 
 			case 8:
 				cls();
+				//Verifica se há anos repetidos na lista.
+				cont = 0;
 				cout << "A opção escolhida foi verificar se há anos repetidos\n\n";
-
+				for ( i = 0; i < 20; i++)
+				{
+					for ( j = 0; j < 20; j++)
+					{
+						if (cad [i][3] == cad[j][3])
+						{
+							cont++;
+						}
+					}
+				}
+				if (cont > 0)
+				{
+					cout << "Existem anos repetidos na lista.";	
+				}
+				else
+				{
+					cout << "Não existem anos repetidos na lista.";
+				}
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
 				{
@@ -392,7 +411,7 @@ int main()
 					opcao = invalida(opcao);
 				}
 				break;
-
+			
 			case 10:
 				cls();
 				cout << "A opção escolhida foi listar apenas os rapazes\n\n";
@@ -418,12 +437,18 @@ int main()
 					opcao = invalida(opcao);
 				}
 				break;
-
+			
 			case 11:
 				cls();
 				cout << "Até logo!\n\n";
 				break;
+			
 			default:
+				while (opcao < 1 || opcao > 2)
+				{
+					cls();
+					opcao = invalida(opcao);
+				}
 				break;
 		}
     }
