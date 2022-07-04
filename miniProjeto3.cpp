@@ -156,8 +156,6 @@ void inicializaMatriz(string fichas[20][4])
 //Função principal do programa
 int main()
 {
-	SetConsoleCP(1252);
-	SetConsoleOutputCP(1252);
     string cad[20][4], info;
     int i, j, opcao = 1, cont, n;
 	
@@ -246,11 +244,10 @@ int main()
 				cin >> info;
 				cad[n-1][3] = info;
 				cout << "\n\n A entrada " << n << " foi alterada para: " << n;
-				for ( j = 0; j < 3; j++)
+				for ( j = 0; j < 4; j++)
 				{
 					cout << " - " << cad[n-1][j]; 
 				}
-				cout << cad[n-1][3];
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
 				{
@@ -264,12 +261,13 @@ int main()
 				cont = 0;
 				//Verifica quem é o mais velho da lista.
 				cout << "A opção escolhida foi verificar quem é o mais velho da lista\n\n";
-				for ( i = 1; i < 20; i++)
+				for ( i = 0; i < 20; i++)
 				{
-					if (cad [i][3] < cad[i-1][3])
+					if (cad [cont][3] > cad[i][3])
 					{
 						cont = i;
 					}
+					
 				}
 				cout << "A pessoa mais velha da lista é: " << cad[cont][0];
 				opcao = voltaMenu (opcao);
@@ -348,7 +346,7 @@ int main()
 				{
 					cout << "O ano de " << info << " aparece " << cont << " na lista.";
 				}
-				else if (cont = 1)
+				else if (cont == 1)
 				{
 					cout << "O ano de " << info << " aparece apenas uma vez na lista.";
 				}
