@@ -102,9 +102,12 @@ int main()
     //Permite usar acentos
     setlocale(LC_ALL,"");
 
-    int opcao = 1, i, n, pa, jogadas, cavando = 1;
+    int opcao = 1, i, n, pa, jogadas;
     char mapa[10] = {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'};
     string mask [10] = {"1","2","3","4","5","6","7","8","9","10"};
+    bool tesouroGerado = false, cavando = 1;
+    
+
     n = rand() % 10;
     //laço para segurar o usuário no menu
 	while (opcao == 1)
@@ -128,6 +131,7 @@ int main()
 					cout << " | " << mapa[i];
 				}
 				cout << " |";
+                tesouroGerado = false;
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
 				{
@@ -142,6 +146,7 @@ int main()
 
 				cout << "\n\nO tesouro foi gerado! Boa sorte!\n\n";
 				geraT (mapa);
+                tesouroGerado = true;
                 opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
 				{
@@ -167,6 +172,13 @@ int main()
                 break;
             case 4:
                 cls();
+                if (tesouroGerado == false)
+                {
+                    geraT (mapa);
+                    tesouroGerado = true;
+                    cout<< "O tesouro foi gerado. Boa Sorte!";
+                }
+                
                 cavando = 1;
 				cout << "A opção escolhida foi tentar acertar o tesouro\n\n";
 				//tentar acertar o tesouro
@@ -202,14 +214,9 @@ int main()
                         }
                     }
                 }
-
-
-                opcao = voltaMenu (opcao);
-				while (opcao < 1 || opcao > 2)
-				{
-					cls();
-					opcao = invalida(opcao);
-				}
+                reset(mapa);
+                reset2(mask);
+                
                 break;
             default:
                 while (opcao < 1 || opcao > 2)
