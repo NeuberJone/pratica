@@ -21,28 +21,28 @@ void desenhaborda ()
 
 int invalida (int op)
 {
-    cout << "Opção inválida, por favor escolha uma das opções abaixo:\n\n";
+    cout << "Opï¿½ï¿½o invï¿½lida, por favor escolha uma das opï¿½ï¿½es abaixo:\n\n";
     cout << "1 - Voltar ao menu anterior\n";
     cout << "2 - Sair\n\n";
-    cout << "Escolha uma das opções e aperte ENTER: ";
+    cout << "Escolha uma das opï¿½ï¿½es e aperte ENTER: ";
     cin >> op;
     if (op == 2)
         {
-            cout << "\n\nAté logo!\n\n";
+            cout << "\n\nAtï¿½ logo!\n\n";
         }
     return op;
 }
 
 int voltaMenu (int op)
 {
-    cout << "\n\nEscolha uma das opções abaixo:\n";
+    cout << "\n\nEscolha uma das opï¿½ï¿½es abaixo:\n";
     cout << "1 - Voltar ao menu anterior\n";
     cout << "2 - Sair\n\n";
-    cout << "Escolha uma das opções e aperte ENTER: ";
+    cout << "Escolha uma das opï¿½ï¿½es e aperte ENTER: ";
     cin >> op;
     if (op == 2)
         {
-            cout << "\n\nAté logo!\n\n";
+            cout << "\n\nAtï¿½ logo!\n\n";
         }
     return op;
 }
@@ -50,19 +50,19 @@ int voltaMenu (int op)
 void menuPrincipal()
 {
 
-    cout << "Escolha uma das opções abaixo: \n";
+    cout << "Escolha uma das opï¿½ï¿½es abaixo: \n";
     cout << "1 - Inicializar a matriz com 80 items (ou seja, 20x4)\n";
     cout << "2 - Listar a matriz\n";
-    cout << "3 - Inserir nova ficha, para aposição escolhida\n";
-    cout << "4 - Com base no ano atual (2022) quem é o mais velho da lista?\n";
-    cout << "5 - Quantas raparigas há na lista?\n";
-    cout << "6 - Quantos rapazes há em Maximinos?\n";
+    cout << "3 - Inserir nova ficha, para aposiï¿½ï¿½o escolhida\n";
+    cout << "4 - Com base no ano atual (2022) quem ï¿½ o mais velho da lista?\n";
+    cout << "5 - Quantas raparigas hï¿½ na lista?\n";
+    cout << "6 - Quantos rapazes hï¿½ em Maximinos?\n";
     cout << "7 - Ler ano; esta ano aparece repetido?\n";
-    cout << "8 - Há anos repetidos?\n";
+    cout << "8 - Hï¿½ anos repetidos?\n";
     cout << "9 - Listar apenas as raparigas\n";
     cout << "10 - Listar apenas os rapazes\n";
     cout << "11 - Sair\n\n";
-    cout << "Escolha uma das opções e aperte ENTER: ";
+    cout << "Escolha uma das opï¿½ï¿½es e aperte ENTER: ";
 }
 
 // inicializa com 20 nomes e 20 freguesias
@@ -85,7 +85,7 @@ void inicializaMatriz(string fichas[20][4])
 	fichas[14][0] = "Anabela";
 	fichas[15][0] = "Otaviano";
 	fichas[16][0] = "Rui";
-	fichas[17][0] = "Silvário";
+	fichas[17][0] = "Silvï¿½rio";
 	fichas[18][0] = "Teodoro";
 	fichas[19][0] = "Zacarias";
 
@@ -153,13 +153,13 @@ void inicializaMatriz(string fichas[20][4])
 	fichas[19][3] = "1986";
 }
 
-//Função principal do programa
+//Funï¿½ï¿½o principal do programa
 int main()
 {
     string cad[20][4], info;
     int i, j, opcao = 1, cont, n;
 	
-    //laço para segurar o usuário no menu
+    //laï¿½o para segurar o usuï¿½rio no menu
 	while (opcao == 1)
 	{
         //inicializaMatriz(cad);
@@ -176,7 +176,7 @@ int main()
 		{
 			case 1:
 				cls();
-				cout << "A opção escolhida foi Inicializar a Matriz\n\n";
+				cout << "A opï¿½ï¿½o escolhida foi Inicializar a Matriz\n\n";
 
 				cout << "A matriz foi iniciada";
 				//Inicializa a matriz
@@ -191,7 +191,7 @@ int main()
 			
 			case 2:
 				cls();
-				cout << "A opção escolhida foi Listar a matriz\n\n";
+				cout << "A opï¿½ï¿½o escolhida foi Listar a matriz\n\n";
 				//listar a matriz
 				for ( i = 0; i < 20; i++)
 				{
@@ -212,8 +212,8 @@ int main()
 
 			case 3:
 				cls();
-				//Altera uma ficha na posição escolhida
-				cout << "A opção escolhida foi Inserir nova ficha, para aposição escolhida\n\n";
+				//Altera uma ficha na posiï¿½ï¿½o escolhida
+				cout << "A opï¿½ï¿½o escolhida foi Inserir nova ficha, para aposiï¿½ï¿½o escolhida\n\n";
 				
 				for ( i = 0; i < 20; i++)
 				{
@@ -224,9 +224,9 @@ int main()
 					}
 					cout << "\n";
 				}
-				cout << "\n\nDigite a posição que deseja alterar: ";
+				cout << "\n\nDigite a posiï¿½ï¿½o que deseja alterar: ";
 				cin >> n;
-				cout << "Na posição " << n << " está a ficha: " << n;
+				cout << "Na posiï¿½ï¿½o " << n << " estï¿½ a ficha: " << n;
 				for ( j = 0; j < 4; j++)
 				{
 					cout << " - " << cad[n-1][j]; 
@@ -237,7 +237,7 @@ int main()
 				cout << "Digite o local: ";
 				cin >> info;
 				cad[n-1][1] = info;
-				cout << "Digite o gênero: ";
+				cout << "Digite o gï¿½nero: ";
 				cin >> info;
 				cad[n-1][2] = info;
 				cout << "Digite o ano de nascimento: ";
@@ -267,7 +267,6 @@ int main()
 					{
 						cont = i;
 					}
-					
 				}
 				cout << "A pessoa mais velha da lista é: " << cad[cont][0];
 				opcao = voltaMenu (opcao);
@@ -280,8 +279,8 @@ int main()
 
 			case 5:
 				cls();
-				cout << "A opção escolhida foi verificar quantas raparigas há na lista\n\n";
-				//Verifica quantas raparigas há na lista
+				cout << "A opï¿½ï¿½o escolhida foi verificar quantas raparigas hï¿½ na lista\n\n";
+				//Verifica quantas raparigas hï¿½ na lista
 				cont = 0;
 				for ( i = 0; i <20; i++)
 				{
@@ -302,8 +301,8 @@ int main()
 
 			case 6:
 				cls();
-				cout << "A opção escolhida foi verificar quantos rapazes há em Maximinos\n\n";
-				//Verifica quantos rapazes há em Maximinos
+				cout << "A opï¿½ï¿½o escolhida foi verificar quantos rapazes hï¿½ em Maximinos\n\n";
+				//Verifica quantos rapazes hï¿½ em Maximinos
 				cont = 0;
 				for ( i = 0; i <20; i++)
 				{
@@ -327,9 +326,9 @@ int main()
 
 			case 7:
 				cls();
-				//Lê um ano digitado pelo usuário e verifica quantas vezes aparece na lista
+				//Lï¿½ um ano digitado pelo usuï¿½rio e verifica quantas vezes aparece na lista
 				cont = 0;
-				cout << "A opção escolhida foi ler ano e verificar se aparece repetido\n\n";
+				cout << "A opï¿½ï¿½o escolhida foi ler ano e verificar se aparece repetido\n\n";
 				cout << "Digite o ano a ser verificado: ";
 				cin >> info;
 				for ( i = 0; i <20; i++)
@@ -352,7 +351,7 @@ int main()
 				}
 				else
 				{
-					cout << "O ano de " << info	<< " não aparece nenhuma vez na lista.";
+					cout << "O ano de " << info	<< " nï¿½o aparece nenhuma vez na lista.";
 				}
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
@@ -364,9 +363,9 @@ int main()
 
 			case 8:
 				cls();
-				//Verifica se há anos repetidos na lista.
+				//Verifica se hï¿½ anos repetidos na lista.
 				cont = 0;
-				cout << "A opção escolhida foi verificar se há anos repetidos\n\n";
+				cout << "A opï¿½ï¿½o escolhida foi verificar se hï¿½ anos repetidos\n\n";
 				for ( i = 0; i < 20; i++)
 				{
 					for ( j = 0; j < 20; j++)
@@ -383,7 +382,7 @@ int main()
 				}
 				else
 				{
-					cout << "Não existem anos repetidos na lista.";
+					cout << "Nï¿½o existem anos repetidos na lista.";
 				}
 				opcao = voltaMenu (opcao);
 				while (opcao < 1 || opcao > 2)
@@ -395,7 +394,7 @@ int main()
 
 			case 9:
 				cls();
-				cout << "A opção escolhida foi listar apenas as raparigas\n\n";
+				cout << "A opï¿½ï¿½o escolhida foi listar apenas as raparigas\n\n";
 				//Lista apenas as raparigas
 				for ( i = 0; i <20; i++)
 				{
@@ -421,7 +420,7 @@ int main()
 			
 			case 10:
 				cls();
-				cout << "A opção escolhida foi listar apenas os rapazes\n\n";
+				cout << "A opï¿½ï¿½o escolhida foi listar apenas os rapazes\n\n";
 				//Lista apenas os rapazes
 				for ( i = 0; i <20; i++)
 				{
@@ -447,7 +446,7 @@ int main()
 			
 			case 11:
 				cls();
-				cout << "Até logo!\n\n";
+				cout << "Atï¿½ logo!\n\n";
 				break;
 			
 			default:
